@@ -1,5 +1,4 @@
-import { MODE, ORIENTATION_TYPE } from "src/constants";
-import { ALIGN_TYPE } from "../constants";
+import { MODE, ORIENTATION_TYPE,ITEM_ADD_POSITION, ALIGN_TYPE } from "src/constants";
 
 export interface OptionCallback {
   (...params: any[]): any;

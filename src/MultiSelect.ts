@@ -25,7 +25,7 @@ let defaultOptions = {
   useMultiSelect: true, // ctrl , shift key 이용해서 다중 선택하기 여부
   useDragMove: false, // drag해서 이동할지 여부.
   useDragSort: false, // target drag 해서 정렬할지 여부.
-  addPosition: "bottom", // 추가 되는 방향키로 추가시 어디를 추가할지. ex(source, last)
+  addPosition: "bottom", // 추가 되는 방향키로 추가시 어디를 추가할지. ex(top, bottom)
   duplicateCheck: true, // 중복 추가 여부.
   enableUpDown: false, //
   valueKey: "code", // value key
