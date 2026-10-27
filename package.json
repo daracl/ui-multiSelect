@@ -1,6 +1,6 @@
 {
   "name": "@daracl/multiselect",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "sideEffects": false,
   "description": "Daracl multiselect",
   "author": {
@@ -39,6 +39,7 @@
     "style"
   ],
   "dependencies": {
+    "@daracl/ui-style": "^0.0.1",
     "init": "^0.1.2",
     "ink-docstrap": "^1.3.2",
     "tslint": "^6.1.3",

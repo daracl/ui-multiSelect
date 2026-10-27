@@ -67,6 +67,9 @@
 
     classList.add(theme);
 
+    // ui-style 테마 전환은 data-daracl-theme 속성으로 한다.
+    document.documentElement.setAttribute("data-daracl-theme", theme);
+
     if (persist) {
       localStorage.setItem(THEME_KEY, theme);
     }

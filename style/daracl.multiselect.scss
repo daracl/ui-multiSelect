@@ -1,12 +1,14 @@
-@use "variable";
+// 색상 / 테두리 같은 공통 값은 @daracl/ui-style 의 테마 변수(--dui-*)를 사용한다. (light 값이 fallback 으로 들어 있음)
+// dark 등 다른 테마는 앱이 '@daracl/ui-style/theme-vars.css' 를 로드하고 <html data-daracl-theme="dark"> 로 전환한다.
+// (body.dark / .daracl-multiselect.dark 클래스 방식은 지원하지 않는다.)
+@use "@daracl/ui-style/themes" as themes;
 
-@use "theme/variable-dark";
 
 .daracl-multiselect {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  background-color: var(--body-bg);
-  color: var(--body-color);
+  background-color: themes.themed(body-bg);
+  color: themes.themed(font-color);
 
   * {
     -webkit-box-sizing: border-box;
@@ -17,12 +19,12 @@
   .daracl-multiselect-btn {
     cursor: pointer;
     border-radius: 3px;
-    border: 1px solid var(--border-color);
-    background: var(--btn-bg);
-    color: var(--btn-color);
+    border: 1px solid themes.themed(input-border-color);
+    background: transparent;
+    color: themes.themed(font-color);
 
     &:hover {
-      background-color: var(--btn-bg-hover);
+      background-color: themes.themed(button-hover-bg);
     }
   }
 
@@ -86,7 +88,7 @@
       padding: 0px 0px 3px;
       margin-bottom: 5px;
       text-align: center;
-      border-bottom: 1px solid var(--border-color);
+      border-bottom: 1px solid themes.themed(border-color);
       display: flex;
       line-height: 27px;
 
@@ -118,15 +120,15 @@
           white-space: nowrap;
           vertical-align: middle;
           border-radius: 4px;
-          border: 1px solid var(--border-color);
+          border: 1px solid themes.themed(input-border-color);
           border-top-left-radius: 0px;
           border-bottom-left-radius: 0px;
-          background: var(--btn-bg);
+          background: transparent;
           cursor: pointer;
           line-height: normal;
 
           &:hover {
-            background: var(--btn-bg-hover);
+            background: themes.themed(button-hover-bg);
           }
         }
       }
@@ -134,11 +136,11 @@
       > .input-text {
         width: 100%;
         flex: 1 1 auto;
-        border: 1px solid var(--border-color);
+        border: 1px solid themes.themed(input-border-color);
         border-radius: 4px;
         padding: 5px 10px;
-        color: var(--body-color);
-        background-color: var(--input-bg);
+        color: themes.themed(font-color);
+        background-color: themes.themed(input-bg);
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
         line-height: normal;
@@ -146,7 +148,7 @@
     }
 
     .daracl-multiselect-area {
-      border: 1px solid var(--border-color);
+      border: 1px solid themes.themed(border-color);
       border-radius: 3px;
       height: 100%;
       padding: 5px 0px;
@@ -167,7 +169,7 @@
           display: flex;
 
           &:hover {
-            background-color: var(--body-hover-color);
+            background-color: themes.themed(hover-bg);
           }
 
           &.hide {
@@ -229,7 +231,7 @@
             padding: 3px 7px;
             margin: 0px 3px;
             margin-left: -1px;
-            color: var(--body-color);
+            color: themes.themed(font-color);
             text-decoration: none;
             border-radius: 3px;
           }
@@ -249,9 +251,9 @@
             &:hover,
             &:focus {
               z-index: 2;
-              color: var(--body-hover-color);
-              background-color: var(--body-hover-bg);
-              border-color: var(--border-color);
+              color: themes.themed(hover-accent-color);
+              background-color: themes.themed(hover-accent-bg);
+              border-color: themes.themed(border-color);
             }
           }
         }
@@ -261,9 +263,9 @@
           > a:hover,
           > a:focus {
             z-index: 3;
-            color: var(--body-active-color);
+            color: themes.themed(active-color);
             cursor: default;
-            background-color: var(--body-active-bg);
+            background-color: themes.themed(active-bg);
           }
         }
 
@@ -271,9 +273,9 @@
           > a,
           > a:hover,
           > a:focus {
-            color: var(--body-disabled-color);
+            color: themes.themed(font-disable-color);
             cursor: not-allowed;
-            border-color: var(--border-color);
+            border-color: themes.themed(border-color);
           }
         }
       }
@@ -281,12 +283,12 @@
 
     .add-item-check {
       > * {
-        color: var(--add-item-color);
+        color: themes.themed(accent-text-color);
       }
     }
 
     .selected {
-      background-color: var(--item-selected-bg) !important;
+      background-color: themes.themed(selected-bg) !important;
     }
 
     .empty-message {
